@@ -45,7 +45,7 @@
     }
 
     .logo {
-        background: url(/img/logo.jpg);
+        background: url(../img/logo.jpg);
         width: 100%;
         margin: 0;
         padding: 150px 0;
@@ -126,12 +126,12 @@
     }
 
     .Product>.show>div:nth-child(1) {
-        background: url(/img/SurfaceGuide.png);
+        background: url(../img/SurfaceGuide.png);
         background-position: 0 -70px;
     }
 
     .Product>.show>div:nth-child(5) {
-        background: url(/img/HomePage2017OfficeGuide-background.png);
+        background: url(../img/HomePage2017OfficeGuide-background.png);
         background-position: -10px -70px;
     }
 
