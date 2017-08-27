@@ -1,0 +1,308 @@
+@font-face {
+    font-family: 'iconfont';  /* project id 353276 */
+    src: url('//at.alicdn.com/t/font_353276_xaukz7wmj8umcxr.eot');
+    src: url('//at.alicdn.com/t/font_353276_xaukz7wmj8umcxr.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_353276_xaukz7wmj8umcxr.woff') format('woff'),
+    url('//at.alicdn.com/t/font_353276_xaukz7wmj8umcxr.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_353276_xaukz7wmj8umcxr.svg#iconfont') format('svg');
+  }
+    body {
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    nav {
+        width: 100%;
+        position: fixed;
+        z-index: 2;
+        background: rgba(10, 174, 204, 0.8);
+        left: 0;
+        top: 0;
+        right: 0;
+    }
+
+    nav li {
+        float: left;
+        margin: 10px;
+    }
+
+    nav a {
+        color: white;
+        font-family: serif;
+    }
+
+    nav li:last-child,
+    nav li:last-child>a {
+        float: right;
+        color: black;
+    }
+
+    .logo {
+        background: url(/img/logo.jpg);
+        width: 100%;
+        margin: 0;
+        padding: 150px 0;
+        text-align: center;
+        font-size: 5em;
+        position: relative;
+    }
+
+    .recommand {
+        min-width: 260px;
+        margin: 20px;
+        overflow: hidden;
+        padding-left: 50px;
+    }
+
+    .recommand>.sideNav {
+        margin-right: 20px;
+        float: left;
+        background: #0078d7;
+    }
+
+    .sideNav {
+        width: 18%;
+        padding: 5px 0px;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .sideNav .title1 {
+        padding-bottom: 12px;
+        border-bottom: 1px white solid;
+    }
+
+    .sideNav,
+    .sideNav a,
+    .sideNav li {
+        font-size: 1em;
+        padding-bottom: 13px;
+        text-align: center;
+        color: white;
+    }
+
+    .recommand .blockenv {
+        padding-left: 0px;
+        float: left;
+        width: 78%;
+    }
+
+    .blockenv li {
+        float: left;
+        width: 30%;
+        margin-right: 3%;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .blockenv img {
+        width: 100%;
+    }
+
+    .Product {
+        margin: 20px;
+    }
+
+    .Product>.show {
+        width: 1180px;
+        margin: 10px auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .Product>.show>div {
+        box-sizing: border-box;
+        border: 1px solid grey;
+        width: 293.837px;
+        min-width: 200px;
+        height: 280px;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .Product>.show>div:nth-child(1) {
+        background: url(/img/SurfaceGuide.png);
+        background-position: 0 -70px;
+    }
+
+    .Product>.show>div:nth-child(5) {
+        background: url(/img/HomePage2017OfficeGuide-background.png);
+        background-position: -10px -70px;
+    }
+
+    .Product .imgs {
+        display: block;
+        position: relative;
+    }
+
+    .Product .imgs>i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: transparent;
+        font-size: 3rem;
+    }
+
+    .Product .imgs:hover>i {
+        color: white;
+    }
+
+    .Product .imgs:hover {
+        opacity: 0.5;
+    }
+
+    .glist {
+        margin: 0 auto;
+        position: relative;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .glist::after {
+        content: " ";
+        display: block;
+        clear: both;
+    }
+
+    .glist li {
+        text-align: center;
+        margin-bottom: 35px;
+        position: relative;
+        height: 137px;
+    }
+
+    .glist>li:nth-child(2n+1)>p {
+        position: relative;
+        left: 7%;
+        float: left;
+        width: 35%;
+        word-break: break-all;
+        text-align: left;
+    }
+
+    .glist>li:nth-child(2n)>p {
+        position: relative;
+        right: 7%;
+        float: right;
+        width: 35%;
+        word-break: break-all;
+        text-align: left;
+    }
+
+    .glist>li>img {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        border: 3px yellowgreen solid;
+        border-radius: 50%;
+        z-index: 1
+    }
+
+
+    /* .glist>li:nth-child(2n)>img {
+        position: relative;
+        margin-left: 350px;
+        border: 3px greenyellow solid;
+        border-radius: 50%;
+        z-index: 1
+    } */
+
+    .game h2 {
+        margin-left: 10px;
+    }
+
+    .game .line {
+        float: left;
+        position: relative;
+        height: 500px;
+        width: 0px;
+        border: 1px solid greenyellow;
+        background-color: greenyellow;
+        bottom: -70px;
+        left: 50%;
+    }
+    .team>.container>.row:nth-child(2){
+        overflow: hidden;
+    }
+    .team > .container>.row{
+        text-align: center;
+    }
+    .team  .col-sm-4{
+        box-sizing: border-box;
+        float: left;
+        width: 33.333333%;
+        
+    }
+    .team  .col-sm-4>img{
+        margin:0 auto;
+        border: 7px solid gainsboro;
+        border-radius: 50%;
+    }
+    .team .col-lg-8{
+        color: #777;
+    }
+
+    footer {
+        background-color: rgba(21, 198, 196, 0.5);
+    }
+
+    .content-title,
+    .content-title h2 {
+        color: white;
+        text-align: center;
+    }
+
+    .content-title p {
+        color: #777;
+    }
+    footer .clearfix {
+        width: 900px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .main-info {
+        float: left;
+        width: 350px;
+    }
+
+    .other-info {
+        float: right;
+        width: 350px;
+    }
+
+    footer .btn {
+        width: 150px;
+        height: 60px;
+        clear: both;
+        margin: 156px auto 40px auto;
+        background-color: yellow;
+        border-radius: 5px;
+    }
+
+    footer .btn a {
+        text-decoration: none;
+        display: block;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .main-info input[type="text"] {
+        width: 300px;
+        height: 32px;
+        border: transparent solid 2px;
+        border-radius: 3px;
+        margin-bottom: 5px;
+    }
+    .other-info textarea{
+        width: 300px;
+        height: 110px;
+    }

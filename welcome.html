@@ -5,316 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>JS Bin</title>
-    <style>
-    @font-face {
-        font-family: 'iconfont';  /* project id 353276 */
-        src: url('//at.alicdn.com/t/font_353276_xaukz7wmj8umcxr.eot');
-        src: url('//at.alicdn.com/t/font_353276_xaukz7wmj8umcxr.eot?#iefix') format('embedded-opentype'),
-        url('//at.alicdn.com/t/font_353276_xaukz7wmj8umcxr.woff') format('woff'),
-        url('//at.alicdn.com/t/font_353276_xaukz7wmj8umcxr.ttf') format('truetype'),
-        url('//at.alicdn.com/t/font_353276_xaukz7wmj8umcxr.svg#iconfont') format('svg');
-      }
-        body {
-            margin: 0;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        li {
-            list-style-type: none;
-        }
-
-        nav {
-            width: 100%;
-            position: fixed;
-            z-index: 2;
-            background: rgba(10, 174, 204, 0.8);
-            left: 0;
-            top: 0;
-            right: 0;
-        }
-
-        nav li {
-            float: left;
-            margin: 10px;
-        }
-
-        nav a {
-            color: white;
-            font-family: serif;
-        }
-
-        nav li:last-child,
-        nav li:last-child>a {
-            float: right;
-            color: black;
-        }
-
-        .logo {
-            background: url(./img/logo.jpg);
-            width: 100%;
-            margin: 0;
-            padding: 150px 0;
-            text-align: center;
-            font-size: 5em;
-            position: relative;
-        }
-
-        .recommand {
-            min-width: 260px;
-            margin: 20px;
-            overflow: hidden;
-            padding-left: 50px;
-        }
-
-        .recommand>.sideNav {
-            margin-right: 20px;
-            float: left;
-            background: #0078d7;
-        }
-
-        .sideNav {
-            width: 18%;
-            padding: 5px 0px;
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
-
-        .sideNav .title1 {
-            padding-bottom: 12px;
-            border-bottom: 1px white solid;
-        }
-
-        .sideNav,
-        .sideNav a,
-        .sideNav li {
-            font-size: 1em;
-            padding-bottom: 13px;
-            text-align: center;
-            color: white;
-        }
-
-        .recommand .blockenv {
-            padding-left: 0px;
-            float: left;
-            width: 78%;
-        }
-
-        .blockenv li {
-            float: left;
-            width: 30%;
-            margin-right: 3%;
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
-
-        .blockenv img {
-            width: 100%;
-        }
-
-        .Product {
-            margin: 20px;
-        }
-
-        .Product>.show {
-            width: 1180px;
-            margin: 10px auto;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .Product>.show>div {
-            box-sizing: border-box;
-            border: 1px solid grey;
-            width: 293.837px;
-            min-width: 200px;
-            height: 280px;
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .Product>.show>div:nth-child(1) {
-            background: url(./img/SurfaceGuide.png);
-            background-position: 0 -70px;
-        }
-
-        .Product>.show>div:nth-child(5) {
-            background: url(./img/HomePage2017OfficeGuide-background.png);
-            background-position: -10px -70px;
-        }
-
-        .Product .imgs {
-            display: block;
-            position: relative;
-        }
-
-        .Product .imgs>i {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: transparent;
-            font-size: 3rem;
-        }
-
-        .Product .imgs:hover>i {
-            color: white;
-        }
-
-        .Product .imgs:hover {
-            opacity: 0.5;
-        }
-
-        .glist {
-            margin: 0 auto;
-            position: relative;
-            width: 100%;
-            padding-left: 0;
-        }
-
-        .glist::after {
-            content: " ";
-            display: block;
-            clear: both;
-        }
-
-        .glist li {
-            text-align: center;
-            margin-bottom: 35px;
-            position: relative;
-            height: 137px;
-        }
-
-        .glist>li:nth-child(2n+1)>p {
-            position: relative;
-            left: 7%;
-            float: left;
-            width: 35%;
-            word-break: break-all;
-            text-align: left;
-        }
-
-        .glist>li:nth-child(2n)>p {
-            position: relative;
-            right: 7%;
-            float: right;
-            width: 35%;
-            word-break: break-all;
-            text-align: left;
-        }
-
-        .glist>li>img {
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%);
-            border: 3px yellowgreen solid;
-            border-radius: 50%;
-            z-index: 1
-        }
-
-
-        /* .glist>li:nth-child(2n)>img {
-            position: relative;
-            margin-left: 350px;
-            border: 3px greenyellow solid;
-            border-radius: 50%;
-            z-index: 1
-        } */
-
-        .game h2 {
-            margin-left: 10px;
-        }
-
-        .game .line {
-            float: left;
-            position: relative;
-            height: 500px;
-            width: 0px;
-            border: 1px solid greenyellow;
-            background-color: greenyellow;
-            bottom: -70px;
-            left: 49.5%;
-        }
-        .team>.container>.row:nth-child(2){
-            overflow: hidden;
-        }
-        .team > .container>.row{
-            text-align: center;
-        }
-        .team  .col-sm-4{
-            box-sizing: border-box;
-            float: left;
-            width: 33.333333%;
-            
-        }
-        .team  .col-sm-4>img{
-            margin:0 auto;
-            border: 7px solid gainsboro;
-            border-radius: 50%;
-        }
-        .team .col-lg-8{
-            color: #777;
-        }
-
-        footer {
-            background-color: rgba(21, 198, 196, 0.5);
-        }
-
-        .content-title,
-        .content-title h2 {
-            color: white;
-            text-align: center;
-        }
-
-        .content-title p {
-            color: #777;
-        }
-        footer .clearfix {
-            width: 900px;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        .main-info {
-            float: left;
-            width: 350px;
-        }
-
-        .other-info {
-            float: right;
-            width: 350px;
-        }
-
-        footer .btn {
-            width: 150px;
-            height: 60px;
-            clear: both;
-            margin: 156px auto 40px auto;
-            background-color: yellow;
-            border-radius: 5px;
-        }
-
-        footer .btn a {
-            text-decoration: none;
-            display: block;
-            color: #fff;
-            font-size: 18px;
-            text-align: center;
-            padding-top: 20px;
-        }
-
-        .main-info input[type="text"] {
-            width: 300px;
-            height: 32px;
-            border: transparent solid 2px;
-            border-radius: 3px;
-            margin-bottom: 5px;
-        }
-        .other-info textarea{
-            width: 300px;
-            height: 110px;
-        }
-    </style>
+    <link href="/css/welcome.css" rel="stylesheet">
 </head>
 
 <body>
@@ -344,17 +35,17 @@
         </ul>
         <ul class="blockenv">
             <li>
-                <a href="#"></a><img src="./img/Media-01.png">
+                <a href="#"></a><img src="/img/Media-01.png">
                 <p>以多种旧机换购Surface及Xbox指定精选机型，最高额外补贴400元</p>
             </li>
             <li>
-                <a href="#"></a><img src="./img/Media-02.png">
+                <a href="#"></a><img src="/img/Media-02.png">
                 <P>
                     学生及教职工专属折扣，Surface精选机型加赠好礼，热销配件优惠中
                 </P>
             </li>
             <li>
-                <a href="#"></a><img src="./img/Media-03.jpg">
+                <a href="#"></a><img src="/img/Media-03.jpg">
                 <P>认证商务会员享专属特权；认证翻新产品现已销售</P>
             </li>
         </ul>
@@ -367,17 +58,17 @@
                     <h3>
             </div>
             <div>
-                <div class="imgs"><i>&#x0002B</i><img src="./img/HomePage2017ProductSurface-01.png"></div>
+                <div class="imgs"><i>&#x0002B</i><img src="/img/HomePage2017ProductSurface-01.png"></div>
                 <h3 title="Surface Laptop">Surface Laptop</h3>
                 <p>便携与性能的平衡，给你更多个性选择</p>
             </div>
             <div>
-                <div class="imgs"><i>&#x0002B</i><img src="./img/HomePage2017ProductSurface-02.png"></div>
+                <div class="imgs"><i>&#x0002B</i><img src="/img/HomePage2017ProductSurface-02.png"></div>
                 <h3 title="Surface Laptop">Surface Laptop</h3>
                 <p>便携与性能的平衡，给你更多个性选择</p>
             </div>
             <div>
-                <div class="imgs"><i>&#x0002B</i><img src="./img/HomePage2017ProductSurface-03.png"></div>
+                <div class="imgs"><i>&#x0002B</i><img src="/img/HomePage2017ProductSurface-03.png"></div>
                 <h3 title="Surface Laptop">Surface Laptop</h3>
                 <p>便携与性能的平衡，给你更多个性选择</p>
             </div>
@@ -386,17 +77,17 @@
                 <p>便携与性能的平衡，给你更多个性选择</p>
             </div>
             <div>
-                <div class="imgs"><i>&#x0002B</i><img src="./img/HomePage2017ProductOffice-02.png"></div>
+                <div class="imgs"><i>&#x0002B</i><img src="/img/HomePage2017ProductOffice-02.png"></div>
                 <h3 title="Surface Laptop">Surface Laptop</h3>
                 <p>便携与性能的平衡，给你更多个性选择</p>
             </div>
             <div>
-                <div class="imgs"><i>&#x0002B</i><img src="./img/HomePage2017ProductOffice-02.png"></div>
+                <div class="imgs"><i>&#x0002B</i><img src="/img/HomePage2017ProductOffice-02.png"></div>
                 <h3 title="Surface Laptop">Surface Laptop</h3>
                 <p>便携与性能的平衡，给你更多个性选择</p>
             </div>
             <div>
-                <div class="imgs"><i>&#x0002B</i><img src="./img/HomePage2017ProductOffice-03.png"></div>
+                <div class="imgs"><i>&#x0002B</i><img src="/img/HomePage2017ProductOffice-03.png"></div>
                 <h3 title="Surface Laptop">Surface Laptop</h3>
                 <p>便携与性能的平衡，给你更多个性选择</p>
             </div>
@@ -407,17 +98,17 @@
         <h2 class="title">Game</h2>
         <div class="line"></div>
         <ul class="glist">
-            <li><img src="./img/game-01.png" alt="">
+            <li><img src="/img/game-01.png" alt="">
                 <p>再度登场的光环战争英雄发现自己和银河系正面对前所未有的危险。延续光环 5 剧情的全新故事，将以光环的经典场景“方舟”为背景，展开充满激烈战斗的任务。玩家将在大规模战</p>
             </li>
-            <li><img src="./img/game02.png" alt="">
+            <li><img src="/img/game02.png" alt="">
                 <p>Time is Power in Quantum Break. Click ‘More’ to find out if your PC is powerful enough for Quantum Break.</p>
             </li>
-            <li><img src="./img/game03.jpg" alt="">
+            <li><img src="/img/game03.jpg" alt="">
                 <p>Forza Horizon 3 暴風雪山擴充套件將帶給玩家新的雪地、冰上、極端海拔高度與暴風雪任務挑戰，完成任務成為雪山之王。駕駛包含 2016 年份的 Ford GYMKHANA 9 Focus RS RX
                     等 8 輛新車探索極端的高山遊樂場。</p>
             </li>
-            <li><img src="./img/game04.png" alt="">
+            <li><img src="/img/game04.png" alt="">
                 <p>自从发现了一个古老的秘密，劳拉必须要探索西伯利亚最诡谲危险、最偏远的区域，并且要抢先一个叫做圣三一的残暴组织找到长生不死的秘密。劳拉必须利用她的机智及求生技能，寻找新的同盟，最终拥抱命运成为真正的古墓奇兵。</p>
             </li>
         </ul>
@@ -432,7 +123,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-4">
-                                <img src="./img/team1.jpg" class="img-responsive img-circle" alt="">
+                                <img src="/img/team1.jpg" class="img-responsive img-circle" alt="">
                                 <h4>Kay Garland</h4>
                                 <p class="text-muted">Lead Designer</p>
                                 <ul class="list-inline social-buttons">
@@ -445,7 +136,7 @@
                                 </ul>
                         </div>
                         <div class="col-sm-4">
-                                <img src="./img/team2.jpg" class="img-responsive img-circle" alt="">
+                                <img src="/img/team2.jpg" class="img-responsive img-circle" alt="">
                                 <h4>Larry Parker</h4>
                                 <p class="text-muted">Lead Marketer</p>
                                 <ul class="list-inline social-buttons">
@@ -458,7 +149,7 @@
                                 </ul>
                         </div>
                         <div class="col-sm-4">
-                                <img src="./img/team3.jpg" class="img-responsive img-circle" alt="">
+                                <img src="/img/team3.jpg" class="img-responsive img-circle" alt="">
                                 <h4>Diana Pertersen</h4>
                                 <p class="text-muted">Lead Developer</p>
                                 <ul class="list-inline social-buttons">
