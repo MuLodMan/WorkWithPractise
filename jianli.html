@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            /* project id 392012 */
+            src: url('http://at.alicdn.com/t/font_392012_6x9b6brucccpiudi.eot');
+            src: url('http://at.alicdn.com/t/font_392012_6x9b6brucccpiudi.eot?#iefix') format('embedded-opentype'),
+            url('http://at.alicdn.com/t/font_392012_6x9b6brucccpiudi.woff') format('woff'),
+            url('http://at.alicdn.com/t/font_392012_6x9b6brucccpiudi.ttf') format('truetype'),
+            url('http://at.alicdn.com/t/font_392012_6x9b6brucccpiudi.svg#iconfont') format('svg');
+        }
+
+        .wrap {
+            padding-top: 10px;
+            padding-right: 13px;
+            margin: 0 auto;
+            width: 800px;
+            background-color: #eee;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .header {
+            padding-left: 5%;
+        }
+
+        .header::after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+
+        .header>.descimg {
+            float: left;
+            width: 100px;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            margin: 5px;
+        }
+
+        .header>h2 {
+            float: left;
+        }
+
+        .header .position {
+            display: block;
+            margin-top: 15px;
+            font-weight: 300;
+            font-size: 0.8em;
+            text-align: center;
+        }
+
+        .header .contact {
+            float: right;
+            margin-right: 20px;
+            text-align: center;
+        }
+
+        .header .title {
+            border-bottom: black solid 2px;
+        }
+
+        .body .title {
+            margin-top: 8px;
+            margin-left: 7%;
+        }
+
+        .body h3 {
+            padding-bottom: 8px;
+            border-bottom: grey 1px solid
+        }
+
+        .title .ease {
+            float: left;
+            margin-top: -4px;
+            border-left: #eee 7px solid;
+            position: relative;
+            right: 2px;
+            bottom: 6px;
+        }
+
+        .contact .location::before {
+            font-family: 'iconfont'!important;
+            font-size: 16px;
+            font-style: normal;
+            content: "\e604"
+        }
+
+        .list {
+            border-left: 1px solid black;
+            padding-left: 14px;
+        }
+        .footer{
+            overflow: hidden;
+            padding:3px 50px;;
+
+        }
+        .footer .left{
+            float: left;
+            width: 42%;
+        }
+        .footer .right{
+            float: right;
+            width: 42%;
+        }
+        .footer h2{
+            border-bottom: 1px solid grey;
+        }
+        .footer .content::before{
+            content:'\029BF   ';
+            font-size:2em
+        }
+        .content{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header"><img src="http://ojk5el9c1.bkt.clouddn.com/tiny.JPG" alt="描述" class="descimg">
+            <h2>My Describe<span class="position">front developer</span></h2>
+            <div class="contact">
+                <h3 class="title">contact me</h3><span class="location">:HeBei Handan in China</span>
+            </div>
+        </div>
+        <div class="body">
+            <div class="title">
+                <h2>WORK EXPERIENCE</h2>
+                <div class="ease">&nbsp</div>
+                <ul class="list">
+                    <li>
+                        <h3>BeiJing Skyland NodeJs programer</h3>
+                        <span>Do you know what i am promgramming for? For server(GameServer). Do you know what our company use?
+                            NodeJs. Maybe you should think we just use nodejs to route handlers. Humm... we use it for All service!!!
+                            And then ? Nothing except for my leaving. It's tough for me to handle the logic which is cool when i write it,
+                            writed by others.
+                        </span>
+                    </li>
+                    <li>
+                        <h3>BeiJing Skyland NodeJs programer</h3>
+                        <span>Do you know what i am promgramming for? For server(GameServer). Do you know what our company use?
+                                NodeJs. Maybe you should think we just use nodejs to route handlers. Humm... we use it for All service!!!
+                                And then ? Nothing except for my leaving. It's tough for me to handle the logic which is cool when i write it,
+                                writed by others.
+                        </span>
+                    </li>
+                    <li>
+                        <h3>BeiJing Skyland NodeJs programer</h3>
+                        <span>Do you know what i am promgramming for? For server(GameServer). Do you know what our company use?
+                                NodeJs. Maybe you should think we just use nodejs to route handlers. Humm... we use it for All service!!!
+                                And then ? Nothing except for my leaving. It's tough for me to handle the logic which is cool when i write it,
+                                writed by others.
+                        </span>
+                    </li>
+                    <li>
+                        <h3>BeiJing Skyland NodeJs programer</h3>
+                        <span>Do you know what i am promgramming for? For server(GameServer). Do you know what our company use?
+                                NodeJs. Maybe you should think we just use nodejs to route handlers. Humm... we use it for All service!!!
+                                And then ? Nothing except for my leaving. It's tough for me to handle the logic which is cool when i write it,
+                                writed by others.
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="title">
+                <h2>STUDY EXPERIENCE</h2>
+                <div class="ease">&nbsp</div>
+                <ul class="list">
+                    <li>
+                        <h3>University Of Science and Technology Of Hebei </h3>
+                        <span>Do you know what i am promgramming for? For server(GameServer). Do you know what our company use?
+                                NodeJs. Maybe you should think we just use nodejs to route handlers. Humm... we use it for All service!!!
+                                And then ? Nothing except for my leaving. It's tough for me to handle the logic which is cool when i write it,
+                                writed by others.
+                        </span>
+                    </li>
+                    <li>
+                        <h3>BeiJing Skyland NodeJs programer</h3>
+                        <span>Do you know what i am promgramming for? For server(GameServer). Do you know what our company use?
+                                    NodeJs. Maybe you should think we just use nodejs to route handlers. Humm... we use it for All service!!!
+                                    And then ? Nothing except for my leaving. It's tough for me to handle the logic which is cool when i write it,
+                                    writed by others.
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+                <div class="right">
+                    <h2 class="p">Practise</h2>
+                    <span class="content">aaaaa</span>
+                    <span class="content">aaaaa</span>
+                    <span class="content">aaaaa</span>
+                </div>
+                <div class="left">
+                    <h2 class="s">Skills</h2>
+                    <span class="content">aaaaaaa</span>
+                    <span class="content">aaaaaaa</span>
+                    <span class="content">aaaaaaa</span>
+                </div>
+         </div>
+    </div>
+
+</body>
+
+</html>
