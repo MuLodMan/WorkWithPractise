@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8"/>
+<head>
+
+    <style>
+        body {
+            margin: auto 0;
+        }
+
+        .tab {
+            list-style-type: none;
+            overflow: hidden;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .tab>li {
+            border: 1px solid grey;
+            float: left;
+            width: 10vw;
+        }
+
+        .showcontent {
+            width: 30.3vw;
+            height: 10vw;
+            border: 1px solid grey;
+            text-align: center;
+        }
+
+        .term2 {
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .clickme {
+            display: block;
+        }
+        .bc{
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(215, 199, 217, 0.5);
+        }
+
+        .show {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            height: 150px;
+            width: 250px;
+            transform: translate(-50%, 0);
+            background-color: white;
+        }
+
+        .closewindow {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="term1">
+        <ul class="tab">
+            <li data-content="内容1">tab1</li>
+            <li data-content="内容2">tab2</li>
+            <li data-content="内容3">tab3</li>
+        </ul>
+        <div class="showcontent">
+        </div>
+    </div>
+    <div class="term2">
+        <button class="clickme">
+                点我
+            </button>
+        <div class="bc">
+            <div class="show">
+                <div class="title">
+                    <span class="message">我是标题</span>
+                    <span class="closewindow">x</span>
+                </div>
+                <div class="content">
+                    <p>我是内容111</p>
+                    <p>我是内容222</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let showcontent = document.querySelector('.showcontent')
+        let tabs = document.querySelector('.tab')
+        let cm = document.querySelector('.clickme')
+        let bc = document.querySelector('.bc')
+        let show = document.querySelector('.show')
+        let closewindow = document.querySelector('.closewindow')
+        tabs.addEventListener('click', function (e) {
+            e.target.style.backgroundColor="grey"
+            showcontent.innerText = e.target.dataset.content;
+            Array.prototype.forEach.call(this.children,function(value){
+                if(value!==e.target) value.style.backgroundColor="white";
+            })
+        })
+        bc.addEventListener('click',function(e){
+            this.style.display="none"
+        }) 
+        closewindow.addEventListener('click',function(e){
+            bc.style.display="none"
+        })
+        cm.addEventListener('click',function(e){
+            bc.style.display="block"
+        })
+        show.addEventListener('click',function(e){
+            e.stopPropagation()
+        })
+    </script>
+</body>
+
+</html>
