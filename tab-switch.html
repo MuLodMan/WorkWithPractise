@@ -1,0 +1,201 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <style>
+        .wraper{
+            margin: 30px;
+        }
+        .wraper>.showtab {
+            font-size: 13px;
+            float: left;
+            border-left:1px solid rgb(238, 238, 238);
+            border-top: 1px solid #eee;
+            padding: 5px;
+            cursor: pointer;
+            color: grey;
+            line-height: 2em;
+
+        }
+        .wraper .showtab:nth-child(3){
+            border-right: 1px solid #eee;
+        }
+        .wraper .content{
+            border:1px solid #eee;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            width: 750px;
+            height: 450px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .showlib {
+            width: 218px;
+            height: 208px;
+            text-align: center;
+            position: relative;
+            border: 1px solid #eee;
+        }
+
+        .showlib>.price,
+        .showlib .text {
+            font-size: 11px;
+            padding: 0;
+            margin: 4px 0;
+        }
+
+        .cover {
+            position: absolute;
+            background-color: rgba(105, 102, 102, 0.39);
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            
+        }
+        .slogan{
+            color: red;
+            margin:50% 50%;
+            transform: translate(-50%,-50%);
+            width:80px;
+            height: 20px;
+            border:red solid 1px;
+            background: white;
+        }
+
+        .price {
+            color: red;
+        }
+    </style>
+   <script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wraper">
+        <div class="showtab">热门</div>
+        <div class="showtab">珠宝首饰</div>
+        <div class="showtab">奢侈品</div>
+        <div class="clear"> </div>
+        <div class="content">
+            <div class="showlib">
+                <img class="categories" src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"alt="">
+                <p class="text">藏美千足金和田玉金镶玉路路通吊坠</p>
+                <p class="price">￥1699.00</p>
+            </div>
+            <div class="showlib">
+                    <img class="categories" src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"alt="">
+                    <p class="text">藏美千足金和田玉金镶玉路路通吊坠</p>
+                    <p class="price">￥1699.00</p>
+            </div>
+            <div class="showlib">
+                    <img class="categories" src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"alt="">
+                    <p class="text">藏美千足金和田玉金镶玉路路通吊坠</p>
+                    <p class="price">￥1699.00</p>
+            </div>
+            <div class="showlib">
+                    <img class="categories" src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"alt="">
+                    <p class="text">藏美千足金和田玉金镶玉路路通吊坠</p>
+                    <p class="price">￥1699.00</p>
+            </div>
+            <div class="showlib">
+                    <img class="categories" src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"alt="">
+                    <p class="text">藏美千足金和田玉金镶玉路路通吊坠</p>
+                    <p class="price">￥1699.00</p>
+            </div>
+            <div class="showlib">
+                    <img class="categories" src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"alt="">
+                    <p class="text">藏美千足金和田玉金镶玉路路通吊坠</p>
+                    <p class="price">￥1699.00</p>
+            </div>
+        </div>
+    </div>
+    <div class="wraper">
+        <div class="showtab">热门</div>
+        <div class="showtab">珠宝首饰</div>
+        <div class="showtab">奢侈品</div>
+        <div class="clear"> </div>
+        <div class="content">
+            <div class="showlib">
+                <img class="categories" src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"alt="">
+                <p class="text">藏美千足金和田玉金镶玉路路通吊坠</p>
+                <p class="price">￥1699.00</p>
+            </div>
+            <div class="showlib">
+                    <img class="categories" src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"alt="">
+                    <p class="text">藏美千足金和田玉金镶玉路路通吊坠</p>
+                    <p class="price">￥1699.00</p>
+            </div>
+            <div class="showlib">
+                    <img class="categories" src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"alt="">
+                    <p class="text">藏美千足金和田玉金镶玉路路通吊坠</p>
+                    <p class="price">￥1699.00</p>
+            </div>
+            <div class="showlib">
+                    <img class="categories" src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"alt="">
+                    <p class="text">藏美千足金和田玉金镶玉路路通吊坠</p>
+                    <p class="price">￥1699.00</p>
+            </div>
+            <div class="showlib">
+                    <img class="categories" src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"alt="">
+                    <p class="text">藏美千足金和田玉金镶玉路路通吊坠</p>
+                    <p class="price">￥1699.00</p>
+            </div>
+            <div class="showlib">
+                    <img class="categories" src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"alt="">
+                    <p class="text">藏美千足金和田玉金镶玉路路通吊坠</p>
+                    <p class="price">￥1699.00</p>
+            </div>
+        </div>
+    </div>
+    <script>
+       var cover = document.createElement('div'),
+         solgan  =document.createElement('div'),
+         imgmap  = ['http://img12.360buyimg.com/N3/jfs/t2302/181/1562193880/220016/88a978ef/56cbbc11Nd6d3b04b.jpg',
+         'http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg',
+         'http://img13.360buyimg.com/N3/jfs/t2461/336/2166939566/101221/3af27699/56c426a5N9b6673f4.jpg']
+         solgan.innerText="立即抢购";
+         solgan.classList.add('slogan')
+         cover.classList.add('cover')
+         cover.appendChild(solgan)
+        $('.showlib').mouseenter(function (e) {
+            this.appendChild(cover)
+            cover.style.display="block"
+        })
+        $('.showlib').mouseleave(function(e){
+            this.removeChild(cover)
+            cover.style.display='none'
+        })
+        $('.wraper').click(function(e){
+            if(!this.hasChildNodes()||e.target.className!='showtab') //fuck it precedence!!!!!
+            { 
+                return
+            }
+            var children = this.children
+            for(var i=0;i<3;i++){
+                if(children[i]==e.target){
+                    break;
+                }
+            }
+            $('.showtab').css('color','black')
+            // console.log(i)
+             e.target.style.color="red"
+             Array.prototype.forEach.call($(this).find('.showlib .categories'),function(e){
+                 e.setAttribute('src',imgmap[i])
+             });  
+             
+        })
+    </script>
+</body>
+
+</html>
