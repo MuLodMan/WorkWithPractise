@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+  .tabContainer{
+      display: flex;
+      list-style-type: none;
+      justify-content: space-between;
+      padding-left: 0;
+      margin: 0;
+  }
+  .tabContainer>li{
+      flex-grow: 1;
+      border-top: 1px solid grey;
+      border-left: 1px solid grey;
+      text-align: center;
+      line-height: 1.8em;
+      cursor: pointer;
+  }
+  .ShowContents{
+      margin-top:-1px;
+      padding: 0;
+      height: 200px;
+      border: 1px solid grey;
+      overflow: hidden;
+  }
+  .ShowContents>.wrap{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+  .ShowContents p{
+      height: 100%;
+      margin: 0;
+      border:none;
+      padding: 0;
+  }
+  .ShowContents p:nth-child(1){
+        background: red
+  }
+  .ShowContents p:nth-child(2){
+        background: green
+  }
+  .ShowContents p:nth-child(3){
+        background: blue
+  }
+  .active{
+      background-color: grey;
+  }
+  </style>
+</head>
+<body>
+<ul class="tabContainer">
+    <li>tab1</li>
+    <li>tab2</li>
+    <li>tab3</li>
+</ul>
+<div class="ShowContents">
+    <div class="wrap">
+            <p>content1</p>
+            <p>content2</p>
+            <p>content3</p>
+    </div>
+</div>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js">
+</script>
+<script>
+     var tabContainer = $('.tabContainer'),
+        ShowContents = $('.ShowContents>.wrap');
+        tabContainer.click(function(e){
+            var children = this.children
+            for(var i=0;i<3;i++){
+                if(children[i]==e.target){
+                    break;
+                }
+            }
+            $(e.target).addClass('active').siblings().removeClass('active')
+            ShowContents.animate({marginTop:-($('.ShowContents').height())*i+'px'})
+        })
+</script>
+</body>
+</html>

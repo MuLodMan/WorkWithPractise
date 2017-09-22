@@ -1,0 +1,143 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="UTF-8" name="author" content="allen">
+    <style>
+        .content {
+            display: flex;
+            flex-direction: row;
+            width: 750px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .showlib {
+            width: 218px;
+            height: 208px;
+            text-align: center;
+            position: relative;
+            border: 1px solid #eee;
+        }
+
+        .showlib>.price,
+        .showlib .text {
+            font-size: 11px;
+            padding: 0;
+            margin: 4px 0;
+        }
+
+        #loadmore {
+            text-align: center;
+            width: 80px;
+           position: relative;
+            background: white;
+            border: 1px solid red;
+            cursor: pointer;
+        }
+
+        .cover {
+            position: absolute;
+            background-color: rgba(105, 102, 102, 0.39);
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transition: all 0.3s;
+            opacity: 0;
+        }
+
+        .hover {
+            opacity: 1;
+        }
+
+        .slogan {
+            color: red;
+            margin: 50% 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 20px;
+            border: red solid 1px;
+            background: white;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h2>
+        珠宝首饰
+    </h2>
+    <div class="content">
+        <div class="showlib">
+            <img class="categories" src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                alt="">
+            <p class="text">藏美千足金和田玉金镶玉路路通吊坠</p>
+            <p class="price">￥1699.00</p>
+        </div>
+        <div class="showlib">
+            <img class="categories" src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                alt="">
+            <p class="text">藏美千足金和田玉金镶玉路路通吊坠</p>
+            <p class="price">￥1699.00</p>
+        </div>
+        <div class="showlib">
+            <img class="categories" src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                alt="">
+            <p class="text">藏美千足金和田玉金镶玉路路通吊坠</p>
+            <p class="price">￥1699.00</p>
+        </div>
+    </div>
+    <div id="loadmore">点击加载</div>
+    <script>
+        var cover = document.createElement('div'),
+            solgan = document.createElement('div'),
+            moreProduct =null,
+            InitProduct=$('.content');
+        solgan.innerText = "立即抢购";
+        solgan.classList.add('slogan')
+        cover.classList.add('cover')
+        cover.appendChild(solgan)
+
+        var products = [
+            {
+                img: 'http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg',
+                name: '珂兰 黄金手 猴哥款',
+                price: '￥405.00'
+            }, {
+                img: 'http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg',
+                name: '珂兰 黄金转运珠 猴哥款',
+                price: '￥100.00'
+            }, {
+                img: 'http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg',
+                name: '珂兰 黄金手链 3D猴哥款',
+                price: '￥45.00'
+            }
+        ];
+        $('.showlib').mouseenter(function (e) {
+            this.appendChild(cover)
+            setTimeout(function () {
+                cover.classList.add('hover')
+            }, 0);
+        })
+        $('.showlib').mouseleave(function (e) {
+            this.removeChild(cover)
+            setTimeout(function () {
+                cover.classList.remove('hover')
+            }, 0);
+        })
+        moreProduct = $('.content').clone(true,true);
+        $('#loadmore').click(function () {
+            let more = moreProduct.clone(true,true)
+            products.forEach(function(product,index){
+                more[0].children[index].children[0].src=product.img
+                more[0].children[index].children[1].textContent=product.name
+                more[0].children[index].children[2].textContent=product.price
+         })
+         InitProduct.append(more)
+        })
+    </script>
+</body>
+
+</html>
