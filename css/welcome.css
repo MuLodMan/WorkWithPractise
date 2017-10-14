@@ -44,15 +44,81 @@
         color: black;
     }
 
-    .logo {
-        background: url(../img/logo.jpg);
-        width: 100%;
-        margin: 0;
-        padding: 150px 0;
-        text-align: center;
-        font-size: 5em;
+    .carousel a {
+        text-decoration: none;
+      }
+  
+      .carousel {
         position: relative;
-    }
+        /* width: 1000px; */
+        height: 600px;
+         overflow: hidden; 
+      }
+  
+      .carousel .img-ct {
+        position: absolute;
+      }
+      .carousel ul{
+          padding: 0;
+          margin: 0;
+      }
+      .carousel .img-ct>li {
+        float: left;
+      }
+  
+      .carousel .img-ct:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+  
+      .carousel .arrow {
+        position: absolute;
+        top: 50%;
+        margin-top: -15px;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        text-align: center;
+        line-height: 30px;
+        color: #fff;
+      }
+  
+      .carousel .arrow:hover {
+        opacity: .7;
+      }
+  
+      .carousel .pre {
+        left: 10px;
+      }
+  
+      .carousel .next {
+        right: 10px;
+      }
+  
+      .carousel .bullet {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+      }
+  
+      .carousel .bullet>li {
+        display: inline-block;
+        width: 30px;
+        height: 5px;
+        border: 1px solid #ccc;
+        background: #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+  
+      .carousel .bullet>li.active {
+        background-color: #fff;
+        border: 1px solid #fff
+      }
 
     .recommand {
         min-width: 260px;
@@ -305,4 +371,56 @@
     .other-info textarea{
         width: 300px;
         height: 110px;
+    }
+    .pic-ct li {
+        position: absolute;
+        width: 280px;
+        border: 1px solid grey;
+        margin: 10px 0;
+        transition: all 0.8s;
+        opacity: 0;
+    }
+    .pic-ct li:hover{
+        background-color:  rgba(44, 125, 255, 0.5);
+        box-shadow: -3px -4px 16px #8f788b;
+    }
+
+    .pic-ct img {
+        width: 260px;
+        margin: 10px;
+        display: block
+    }
+
+    .pic-ct h3 {
+        text-decoration: none;
+        width: 260px;
+        margin: 10px;
+    }
+
+    .pic-ct p {
+        margin: 10px;
+    }
+    .pic-ct{
+        position: relative;
+    }
+    .pic-ct ::-webkit-scrollbar {
+     -webkit-appearance: none;
+                width: 7px;
+    }
+    .pic-ct ::-webkit-scrollbar-thumb {
+     border-radius: 4px;
+     background-color: rgba(0,0,0,.5);
+    }
+    #load{
+        height: 20px;
+        width: 200px;
+        border: rgb(125, 233, 37) solid 1px;
+        margin: 0 50%;
+        transform: translate(-50%,0);
+        text-align: center;
+        color: yellowgreen;
+        cursor: pointer;
+    }
+    #load:hover{
+        background: rgba(215, 205, 175, 0.5);
     }

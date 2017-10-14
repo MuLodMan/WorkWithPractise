@@ -4,10 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>JS Bin</title>
     <link href="./css/welcome.css" rel="stylesheet">
 </head>
-
 <body>
     <nav>
         <ul>
@@ -21,7 +19,7 @@
         </ul>
     </nav>
     <header class="logo">
-        <a href="#"> MicroSoft </a>
+        
     </header>
     <section class="recommand">
         <ul class="sideNav">
@@ -113,6 +111,8 @@
             </li>
         </ul>
     </section>
+    <section class="news">
+    </section>
     <section class="team">
             <div class="container">
                     <div class="row">
@@ -196,5 +196,17 @@
         </div>
     </footer>
 </body>
+<script src="./package/require.js"></script>
+<script>
+       require.config({
+          baseUrl:'/JIRENGUWORK/package',//change later
+          paths:{
+              Jquery:'jquery-3.2.1.slim',
+              com:'com'
+          }
+       })
+       requirejs(['com/index'])
+
+</script>
 
 </html>
