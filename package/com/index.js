@@ -22,6 +22,7 @@ define([
           document.body.appendChild(gotop.GTE)
           }
           else
+          if(document.body.lastChild===gotop.GTE)
           document.body.removeChild(gotop.GTE)
       })
 
