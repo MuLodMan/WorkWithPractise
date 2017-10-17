@@ -1,6 +1,6 @@
 define([
-    'Jquery','com/barrel','com/pictureSwitch'
-], function(Jquery,barrel,pictureSwitch) {
+    'Jquery','com/barrel','com/pictureSwitch','com/goBack'
+], function(Jquery,barrel,pictureSwitch,goBack) {
     barrel(document.querySelector('section.news'))
     let c = pictureSwitch(document.querySelector('header.logo'))
     c.Content.addEventListener('click',function(e){
@@ -16,4 +16,13 @@ define([
         }
         e.stopPropagation()
       })
+      let gotop = new goBack(innerWidth*0.9,innerHeight*0.8)
+      window.addEventListener('scroll',function(){
+          if(this.scrollY>=this.innerHeight){
+          document.body.appendChild(gotop.GTE)
+          }
+          else
+          document.body.removeChild(gotop.GTE)
+      })
+
 });
