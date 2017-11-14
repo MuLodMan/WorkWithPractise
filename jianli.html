@@ -14,15 +14,17 @@
   	url('./css/jianli/iconfont.svg?t=1503906927073#iconfont') format('svg'); /* iOS 4.1- */
 	}	
 
-.iconfont {
+/* .iconfont {
   font-family:"iconfont" !important;
   font-size:16px;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
-
+        span{
+            text-align: justify;
+        }
         .wrap {
             padding-top: 10px;
             padding-right: 13px;
@@ -81,23 +83,45 @@
             padding-bottom: 8px;
             border-bottom: grey 1px solid
         }
-
+        .subtitle {
+            transform: translate(0,-17px);
+        }
         .title .ease {
             float: left;
-            margin-top: -4px;
+            margin-top: 15px;
             border-left: #eee 7px solid;
             position: relative;
             right: 2px;
             bottom: 6px;
         }
-
+        .header .contact span{
+            display: block;
+            word-spacing: 0.2em;
+        }
         .contact .location::before {
             font-family: 'iconfont'!important;
             font-size: 16px;
             font-style: normal;
             content: "\e604"
         }
-
+        .contact .university::before {
+            font-family: 'iconfont'!important;
+            font-size: 16px;
+            font-style: normal;
+            content: "\e6c0"
+        }
+        .contact .Tel::before {
+            font-family: 'iconfont'!important;
+            font-size: 16px;
+            font-style: normal;
+            content: "\e61b"
+        }
+        .contact .major::before {
+            font-family: 'iconfont'!important;
+            font-size: 16px;
+            font-style: normal;
+            content: "\e62a"
+        }
         .list {
             border-left: 1px solid black;
             padding-left: 14px;
@@ -133,66 +157,44 @@
         <div class="header"><img src="http://ojk5el9c1.bkt.clouddn.com/tiny.JPG" alt="描述" class="descimg">
             <h2>My Describe<span class="position">front developer</span></h2>
             <div class="contact">
-                <h3 class="title">contact me</h3><span class="location">:HeBei Handan in China</span>
+                <h3 class="title">contact me</h3>
+                <span class="location">:河北 邯郸</span>
+                <span class="Tel">:13832059127</span>
+                <span class="university">:河北科技大学</span>
+                <span class="major">:计算机科学与技术</span>
             </div>
         </div>
         <div class="body">
             <div class="title">
-                <h2>WORK EXPERIENCE</h2>
+                <div>
+                    <h2>WORK EXPERIENCE</h2>
+                    <div class="subtitle">BeiJing Skyland NodeJs programer</div>
+                </div>
                 <div class="ease">&nbsp</div>
                 <ul class="list">
                     <li>
-                        <h3>BeiJing Skyland NodeJs programer</h3>
-                        <span>Do you know what i am promgramming for? For server(GameServer). Do you know what our company use?
-                            NodeJs. Maybe you should think we just use nodejs to route handlers. Humm... we use it for All service!!!
-                            And then ? Nothing except for my leaving. It's tough for me to handle the logic which is cool when i write it,
-                            writed by others.
+                        <h3>As a beginner</h3>
+                        <span>
+                        3月-4月下旬（试用期），学习JavaScript和leancloud api，阅读公司游戏战斗场景生成代码，完成了游戏中天梯战斗力排名功能，以及金币查询脚本，该脚本最后会生成csv文件用以判断玩家是否利用系统bug刷金币。
                         </span>
                     </li>
                     <li>
-                        <h3>BeiJing Skyland NodeJs programer</h3>
-                        <span>Do you know what i am promgramming for? For server(GameServer). Do you know what our company use?
-                                NodeJs. Maybe you should think we just use nodejs to route handlers. Humm... we use it for All service!!!
-                                And then ? Nothing except for my leaving. It's tough for me to handle the logic which is cool when i write it,
-                                writed by others.
+                        <h3>Actually do something</h3>
+                        <span> 
+                            4月下旬-5月，编写脚本清理数据库中的多余数据（主要是用户的装备记录，大概有几百万条），其中的过程比较复杂（主要的时间用在梳理与装备相关的业务逻辑上了）。
                         </span>
                     </li>
                     <li>
-                        <h3>BeiJing Skyland NodeJs programer</h3>
-                        <span>Do you know what i am promgramming for? For server(GameServer). Do you know what our company use?
-                                NodeJs. Maybe you should think we just use nodejs to route handlers. Humm... we use it for All service!!!
-                                And then ? Nothing except for my leaving. It's tough for me to handle the logic which is cool when i write it,
-                                writed by others.
+                        <h3>Involved with the project</h3>
+                        <span> 
+                        5月-7月：优化实例占用内存高的问题，然后开始找原因，最后阅读到钻石奖励功能的相关模块时找到了，也不知道是那位已经辞职的前辈将mongodb中取出来的用户排名信息全部放在内存中，并以对象的形式挂载在"根节点"下，我们公司可是有8个服啊，你也真敢放。后来我不得不阅读该模块的功能然后重写了一遍，将内存中的信息迁移到redis中，只在内存中保留一些关键的索引。后来内存占用不高了，但是却出现了内存尖刺（内存会在某一时刻开始暴涨),原因是因为定时任务脚本的运行产生大量的临时对象，但是却没有触发gc，因为gc默认应该是1.4G（64位）。所以起初我调整了max-old-space-size，但是发现内存尖刺还是会出现，后来将一些任务进行分块放在Promise中才解决了内存尖刺问题。由于这次修改是直接在项目代码上修改，所以这段时间接触了git，熟悉了git的使用方法和场景。<br><br>
+                        7月-7月下旬：完成了广场功能，就是能将不同服的玩家也显示出来，使用redis作为不同服公共的缓存。
                         </span>
                     </li>
                     <li>
-                        <h3>BeiJing Skyland NodeJs programer</h3>
-                        <span>Do you know what i am promgramming for? For server(GameServer). Do you know what our company use?
-                                NodeJs. Maybe you should think we just use nodejs to route handlers. Humm... we use it for All service!!!
-                                And then ? Nothing except for my leaving. It's tough for me to handle the logic which is cool when i write it,
-                                writed by others.
-                        </span>
-                    </li>
-                </ul>
-            </div>
-            <div class="title">
-                <h2>STUDY EXPERIENCE</h2>
-                <div class="ease">&nbsp</div>
-                <ul class="list">
-                    <li>
-                        <h3>University Of Science and Technology Of Hebei </h3>
-                        <span>Do you know what i am promgramming for? For server(GameServer). Do you know what our company use?
-                                NodeJs. Maybe you should think we just use nodejs to route handlers. Humm... we use it for All service!!!
-                                And then ? Nothing except for my leaving. It's tough for me to handle the logic which is cool when i write it,
-                                writed by others.
-                        </span>
-                    </li>
-                    <li>
-                        <h3>BeiJing Skyland NodeJs programer</h3>
-                        <span>Do you know what i am promgramming for? For server(GameServer). Do you know what our company use?
-                                    NodeJs. Maybe you should think we just use nodejs to route handlers. Humm... we use it for All service!!!
-                                    And then ? Nothing except for my leaving. It's tough for me to handle the logic which is cool when i write it,
-                                    writed by others.
+                        <h3>The reason of resign</h3>
+                        <span>
+                                后来我辞职了，辞职的理由并不是因为公司不好，而是因为我感觉他们走偏了。nodejs适用于密集型i/o但是我们公司却用它做密集型cpu运算，每次战斗场景都在服务端模拟出来，然后将序列帧发送到客户端播放，这么做是因为可以保证战斗播放时不会卡顿，之前是客户端进行请求服务端进行验证，但是用户意识反馈说卡，所以就改成了服务端模拟，但是这样每一次战斗间隔则会拉长（算是拆了东墙补西墙吧），不过说实话现在已经没有多少人在玩我维护的那款游戏了（虽然是我们公司最能拿得出手的作品）。关于我不想用nodejs写游戏这一点老板还是支持我这么做的，也比较理解我，他当时选用nodejs是因为leancloud只支持nodejs，没办法才将技术栈切换到了nodejs。
                         </span>
                     </li>
                 </ul>
@@ -201,15 +203,21 @@
         <div class="footer">
                 <div class="right">
                     <h2 class="p">Practise</h2>
-                    <span class="content">aaaaa</span>
-                    <span class="content">aaaaa</span>
-                    <span class="content">aaaaa</span>
+                    <span class="content">Game data analyse</span>
+                    <span class="content">data migration</span>
+                    <span class="content">Server optimization </span>
+                    <span class="content"><a href="https://mulodman.github.io/qq-music/">demo:qq-music</a></span>
+                    <span class="content"><a href="http://js.jirengu.com/nowevamage#">demo:Microsoft-store(未作移动端优化)</a>github上的资源不是很稳定，如果超时请多刷新几次</span>
+
                 </div>
                 <div class="left">
                     <h2 class="s">Skills</h2>
-                    <span class="content">aaaaaaa</span>
-                    <span class="content">aaaaaaa</span>
-                    <span class="content">aaaaaaa</span>
+                    <span class="content">css</span>
+                    <span class="content">JavaScript</span>
+                    <span class="content">HTML</span>
+                    <span class="content">nodejs</span>
+                    <span class="content">webpack</span>
+                    <span class="content">jQuery</span>
                 </div>
          </div>
     </div>
