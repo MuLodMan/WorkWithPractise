@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>JS Bin</title>
     <style>
        @font-face {font-family: "iconfont";
   	src: url('./css/jianli/iconfont.eot?t=1503906927073'); /* IE9*/
@@ -34,17 +33,17 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
-        .header {
+        header {
             padding-left: 5%;
         }
 
-        .header::after {
+        header::after {
             display: block;
             content: '';
             clear: both;
         }
 
-        .header>.descimg {
+        header>.descimg {
             float: left;
             width: 100px;
             border: 1px solid transparent;
@@ -52,11 +51,11 @@
             margin: 5px;
         }
 
-        .header>h2 {
+        header>h2 {
             float: left;
         }
 
-        .header .position {
+        header .position {
             display: block;
             margin-top: 15px;
             font-weight: 300;
@@ -64,13 +63,13 @@
             text-align: center;
         }
 
-        .header .contact {
+        header .contact {
             float: right;
             margin-right: 20px;
             text-align: center;
         }
 
-        .header .title {
+        header .title {
             border-bottom: black solid 2px;
         }
 
@@ -94,7 +93,7 @@
             right: 2px;
             bottom: 6px;
         }
-        .header .contact span{
+        header .contact span{
             display: block;
             word-spacing: 0.2em;
         }
@@ -126,23 +125,23 @@
             border-left: 1px solid black;
             padding-left: 14px;
         }
-        .footer{
+        footer{
             overflow: hidden;
             padding:3px 50px;;
 
         }
-        .footer .left{
+        footer .left{
             float: left;
             width: 42%;
         }
-        .footer .right{
+        footer .right{
             float: right;
             width: 42%;
         }
-        .footer h2{
+        footer h2{
             border-bottom: 1px solid grey;
         }
-        .footer .content::before{
+        footer .content::before{
             content:'\029BF';
             font-size:2em
         }
@@ -154,7 +153,7 @@
 
 <body>
     <div class="wrap">
-        <div class="header"><img src="http://ojk5el9c1.bkt.clouddn.com/tiny.JPG" alt="描述" class="descimg">
+        <header><img src="http://ojk5el9c1.bkt.clouddn.com/tiny.JPG" alt="描述" class="descimg">
             <h2>My Describe<span class="position">front developer</span></h2>
             <div class="contact">
                 <h3 class="title">contact me</h3>
@@ -163,7 +162,7 @@
                 <span class="university">:河北科技大学</span>
                 <span class="major">:计算机科学与技术</span>
             </div>
-        </div>
+        </header>
         <div class="body">
             <div class="title">
                 <div>
@@ -200,15 +199,14 @@
                 </ul>
             </div>
         </div>
-        <div class="footer">
+        <footer>
                 <div class="right">
                     <h2 class="p">Practise</h2>
                     <span class="content">Game data analyse</span>
                     <span class="content">data migration</span>
                     <span class="content">Server optimization </span>
                     <span class="content"><a href="https://mulodman.github.io/qq-music/">demo:qq-music</a></span>
-                    <span class="content"><a href="http://js.jirengu.com/nowevamage#">demo:Microsoft-store(未作移动端优化)</a>github上的资源不是很稳定，如果超时请多刷新几次</span>
-
+                    <span class="content"><a href="http://js.jirengu.com/nowevamage#" title="github上的资源不是很稳定，如果超时请多刷新几次,该demo未作移动端优化">demo:Microsoft-store</a></span>
                 </div>
                 <div class="left">
                     <h2 class="s">Skills</h2>
@@ -219,7 +217,7 @@
                     <span class="content">webpack</span>
                     <span class="content">jQuery</span>
                 </div>
-         </div>
+        </footer>
     </div>
 
 </body>
