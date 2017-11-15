@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+    </style>
+    <!-- <link rel="stylesheet" media="text/css" href="magnifier.less"> -->
+    <style>
+ .wraper{
+    position: relative;
+    float: left;
+    overflow: hidden;
+    }
+    .dragArea{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: rgba(228, 126, 152, 0.4);
+        cursor: crosshair;
+    }
+    .wraperM{
+        display: inline-block;
+        overflow: hidden;
+        margin: 20px;
+    }
+    #magnifier{
+        position: relative;
+        display: inline-block;
+    }
+    #showArea{
+        position: absolute;
+        left: 0px;
+        top:0px;
+        background: rgba(228, 126, 152, 0.4);
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="wraper">
+        <!--  -->
+        <div class="dragArea"></div>
+        <img src="https://img14.360buyimg.com/n1/s450x450_jfs/t10159/363/1183140024/256693/980afae7/59ddcd8cN50a50637.jpg" alt="" srcset="">
+    </div>
+    <div class="wraperM">
+         <div id="magnifier">
+            <img src="https://img14.360buyimg.com/n0/jfs/t10519/362/1176039592/234736/3bc185a8/59ddd945N0e580c08.jpg" alt="" srcset="">
+        </div>
+    </div>
+</body>
+<script src="./jquery-3.2.1.slim.js"></script>
+<script>
+onload=function(){
+var mouseDownX,mouseDownY,initX,initY,flag = false,obj=document.getElementsByClassName('dragArea')[0],isloaded=false,ratio=0;  
+            ratio = document.getElementById('magnifier').clientHeight/document.getElementsByClassName('wraper')[0].clientHeight;
+            let magnifier = document.getElementById('magnifier'),
+                wraperM = document.getElementsByClassName('wraperM')[0];
+             wraperM.style.height=ratio*parseInt(getComputedStyle(obj).height)+'px';
+             wraperM.style.width=ratio*parseInt(getComputedStyle(obj).width)+'px';
+        obj.onmousedown = function(e) {  
+            //鼠标按下时的鼠标所在的X，Y坐标  
+            mouseDownX = e.clientX;  
+            mouseDownY = e.clientY;  
+            //初始位置的X，Y 坐标  
+            initX = obj.offsetLeft;
+            initY = obj.offsetTop;
+            //表示鼠标已按下  
+            flag = true;  
+        }  
+        $(obj).mousemove(function(e) {  
+            // 确保鼠标已按下  
+            if(flag) {  
+                var mouseMoveX = e.clientX,mouseMoveY = e.clientY;  
+                this.style.left =  parseInt(mouseMoveX) - parseInt(mouseDownX) + parseInt(initX) + "px";  
+                magnifier.style.left =-ratio*(parseInt(mouseMoveX) - parseInt(mouseDownX) + parseInt(initX)) + "px";
+
+                this.style.top = parseInt(mouseMoveY) - parseInt(mouseDownY) + parseInt(initY) + "px";
+                magnifier.style.top =-ratio*(parseInt(mouseMoveY) - parseInt(mouseDownY) + parseInt(initY)) + "px";
+
+                if(parseInt(this.style.left)>($(this.parentNode).width()-$(this).width())){
+                this.style.left=$(this.parentNode).width()-$(this).width()+'px'
+                magnifier.style.left =-ratio*($(this.parentNode).width()-$(this).width())+'px'
+                }
+                if(parseInt(this.style.top)>($(this.parentNode).height()-$(this).height())){
+                    this.style.top = $(this.parentNode).height()-$(this).height()+'px'
+                    magnifier.style.top =-ratio*($(this.parentNode).height()-$(this).height())+'px'
+                }
+                if(parseInt(this.style.left)<0){
+                this.style.left= 0 + 'px'
+                magnifier.style.left =  0 + 'px'
+                }
+                if(parseInt(this.style.top)<0){
+                    this.style.top = 0 + 'px'
+                    magnifier.style.top =  0 + 'px'
+                }
+            }  
+            
+        })  
+        document.onmouseup = function() {  
+            //标识已松开鼠标  
+            flag = false;  
+        }  
+}
+</script>
+</html>
